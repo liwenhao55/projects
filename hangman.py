@@ -1,3 +1,4 @@
+#Hangman Tutorial I found on youtube 
 import random
 from words import word_list
 
@@ -6,7 +7,7 @@ def get_word():
     word = random.choice(word_list)
     return word.upper()
 
-
+# basic function if you get a letter right it'll tell you if you get a letter wrong it will tell you and tally up the marks with a hang man
 def play(word):
     word_completion = "_" * len(word)
     guessed = False
@@ -130,7 +131,7 @@ def display_hangman(tries):
     ]
     return stages[tries]
  
-
+# this loops back the function
 def main(): 
     word = get_word() 
     play(word) 
