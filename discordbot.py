@@ -8,7 +8,7 @@ import datetime
 token = os.getenv("ODM2Nzk2MTQxMTgxNTk5NzU1.YIjNIg.Uc5VCNChNc1SX5eVm-vbHAdsaoM")
 
 bot = discord.Client()
-
+# this helps the bot connect to the discord server
 
 @bot.event
 async def on_member_join(member):
@@ -18,7 +18,7 @@ async def on_member_join(member):
 	response = f"Welcome to the test, {member.name}."
 	await channel.send(response)
 
-
+# has the bot greet every individual that joins the server
 @bot.event
 async def on_message(message):
 	print(vars(bot))
@@ -31,7 +31,7 @@ async def on_message(message):
 			response = f"Did someone say {keyword.lower()}? here is a hug <@{message.author.id}>!"
 			await channel.send(response)
 
-
+# if a member says any of the words in the array then they will be given a response
 @bot.event
 async def test():
 	while(True):
@@ -49,6 +49,6 @@ async def test():
 			await channel.send(message)
 		await asyncio.sleep(3600)
 
-
+# tells the bot to give an hourly reminder
 bot.loop.create_task(test())
 bot.run("ODM2Nzk2MTQxMTgxNTk5NzU1.YIjNIg.Uc5VCNChNc1SX5eVm-vbHAdsaoM")
