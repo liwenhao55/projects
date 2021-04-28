@@ -1,4 +1,4 @@
-
+# This is a discord Bot I made from a youtube tutorial
 import os
 import discord 
 import asyncio
