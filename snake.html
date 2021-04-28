@@ -1,3 +1,4 @@
+#Snake tutorial I found online 
 <canvas id="abc" width="500" height="500"> </canvas>
 <script>
     window.onload = function() {
@@ -5,7 +6,7 @@
         ctx = canv.getContext("2d");
         document.addEventListener("keydown", keyPush);
         setInterval(game, 1250 / 15);
-
+# sets game border and game speed
 
     }
     px = py = 10;
@@ -14,7 +15,7 @@
     xv = yv = 0;
     trail = [];
     tail = 4;
-
+#
     function game() {
         px += xv;
         py += yv;
@@ -31,7 +32,7 @@
             py = tc - 1;
         }
 
-
+# if the entity somehow touches itself the snake will go back to having 4 blocks
         ctx.fillStyle = "black";
         ctx.fillRect(0, 0, canv.width, canv.height);
         ctx.fillStyle = "yellow";
@@ -40,7 +41,8 @@
             if (trail[i].x == px && trail[i].y == py) {
                 tail = 4;
             }
-        }
+        } 
+        #this is just making out the snake itself
         trail.push({
             x: px,
             y: py
@@ -63,7 +65,7 @@
         while (trail.length > tail) {
             trail.shift();
         }
-
+# if the snake eats a shape then the tail increases in length
         if (ax == px && ay == py) {
             tail++;
             ax = Math.floor(Math.random() * tc);
@@ -72,7 +74,7 @@
         ctx.fillStyle = "red";
         ctx.fillRect(ax * gs, ay * gs, gs - 2, gs - 2);
     }
-
+# function keys being your arrow keys
     function keyPush(evt) {
         switch (evt.keyCode) {
             case 37:
